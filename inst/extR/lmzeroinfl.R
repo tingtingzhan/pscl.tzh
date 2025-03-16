@@ -46,13 +46,11 @@ lmzeroinfl <- function(formula, data, ...) {
   cl$dist <- 'poisson'
   model_pois <- eval(cl)
   model_pois <- suppressWarnings(backward_maxp.zeroinfl(model_pois, data = data, alpha = .05))
-  model_pois$old_terms <- formula
   
   cl$dist <- 'negbin'
   model_nb <- tryCatch(eval(cl), error = identity, warning = identity)
   if (inherits(model_nb, what = c('error', 'warning'))) return(model_pois)
   model_nb <- suppressWarnings(backward_maxp.zeroinfl(model_nb, data = data, alpha = .05))
-  model_nb$old_terms <- formula
   p_theta <- summary(model_nb)[[1L]]$count['Log(theta)', 'Pr(>|z|)']
   if (!is.na(p_theta) && p_theta < .05) return(model_nb)
   return(model_pois)
