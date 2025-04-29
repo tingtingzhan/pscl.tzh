@@ -61,7 +61,7 @@ backward_maxp.zeroinfl <- function(
   
   # my new!
   check_dat <- data[unique.default(c(rhs1, rhs2))]
-  .check_fac <- names(which(unlist(lapply(check_dat, FUN = function(i) {
+  .check_fac <- names(which(unlist(lapply(check_dat, FUN = \(i) {
     if (is.character(i) && length(unique.default(i) > 2L)) return(TRUE)
     if (is.factor(i) && nlevels(i) > 2L) return(TRUE)
     return(FALSE)

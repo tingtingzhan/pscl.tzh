@@ -33,7 +33,7 @@ desc_.zeroinfl <- function(x) {
 #' @export
 .pval.summary.zeroinfl <- function(x) {
   # returned value from ?pscl:::summary.zeroinfl
-  lapply(x$coefficients, FUN = function(i) {
+  lapply(x$coefficients, FUN = \(i) {
     ret <- i[, 'Pr(>|z|)']
     nm <- rownames(i)
     if (any(id <- ('Log(theta)' == nm))) {
@@ -92,7 +92,7 @@ confint_.zeroinfl <- function(x, level = .95, ...) {
   nm <- x |> coef_.zeroinfl() |> names()
   ci <- confint.default(x, level = level, ...) # no `confint` method for 'zeroinfl' in \pkg{pscl}
   rnm <- dimnames(ci)[[1L]]
-  ret <- lapply(paste0(nm, '_'), FUN = function(i) {
+  ret <- lapply(paste0(nm, '_'), FUN = \(i) {
     out <- ci[startsWith(rnm, prefix = i), , drop = FALSE]
     rownames(out) <- gsub(i, replacement = '', x = rownames(out))
     attr(out, which = 'conf.level') <- level

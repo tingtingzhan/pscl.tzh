@@ -2,7 +2,7 @@ Package: pscl.tzh
 Type: Package
 Title: pscl.tzh
 Version: 0.1.0
-Date: 2024-09-10
+Date: 2025-04-28
 Description: Need to think more..
 Authors@R: c(person(given = 'Tingting', family = 'Zhan',
       role = c('aut', 'cre'), email =
@@ -13,7 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 License: GPL-2
-Depends: R (>= 4.4)
+Depends: R (>= 4.5)
 Imports: MASS (== 7.3.65)
 Suggests: pscl (== 1.5.9)
 
