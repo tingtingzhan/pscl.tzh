@@ -23,8 +23,12 @@ endpoint.zeroinfl <- function(x) {
 #' @rdname S3_zeroinfl
 #' @export
 desc_.zeroinfl <- function(x) {
-  #paste('zero-inflated', family_text(x$dist), 'regression') # [tzh::family_text]
-  paste('zero-inflated', x$dist, 'regression')
+  paste('zero-inflated', switch(
+    EXPR = x$dist,
+    poisson = 'Poisson', 
+    negbin = 'negative binomial', 
+    geometric = 'geometric'
+  ), 'regression')
 }
 
 

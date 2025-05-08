@@ -2,7 +2,7 @@ Package: pscl.tzh
 Type: Package
 Title: pscl.tzh
 Version: 0.1.0
-Date: 2025-04-28
+Date: 2025-05-08
 Description: Need to think more..
 Authors@R: c(person(given = 'Tingting', family = 'Zhan',
       role = c('aut', 'cre'), email =
