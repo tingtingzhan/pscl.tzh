@@ -21,14 +21,31 @@ endpoint.zeroinfl <- function(x) {
 
 
 #' @rdname S3_zeroinfl
+#' @importFrom utils bibentry
 #' @export
 desc_.zeroinfl <- function(x) {
-  paste('zero-inflated', switch(
+  
+  ret <- paste('zero-inflated', switch(
     EXPR = x$dist,
     poisson = 'Poisson', 
     negbin = 'negative binomial', 
     geometric = 'geometric'
-  ), 'regression')
+  ), 'regression [@Lambert92]')
+  
+  attr(ret, which = 'bibentry') <- bibentry(
+    bibtype = 'Article', key = 'Lambert92',
+    author = 'Diane Lambert',
+    journal = 'Technometrics',
+    number = '1',
+    pages = '1--14',
+    title = 'Zero-Inflated Poisson Regression, with an Application to Defects in Manufacturing',
+    volume = '34',
+    year = '1992',
+    doi = '10.2307/1269547'
+  )
+  
+  return(ret)
+  
 }
 
 
