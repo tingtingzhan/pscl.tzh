@@ -13,7 +13,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 License: GPL-2
-Depends: R (>= 4.5)
-Imports: MASS (== 7.3.65)
-Suggests: pscl (== 1.5.9)
+Depends: R (>= 4.5), pscl (== 1.5.9)
+Imports: methods, MASS (== 7.3.65), rmd.tzh
 
