@@ -13,9 +13,9 @@
 R Markdown Lines for \link[pscl]{zeroinfl} Object
 }
 \examples{
-library(rmd.tzh); library(ecip) 
+library(ecip) 
 list(
  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
-) |> render_(file = 'zeroinfl')
+) |> rmd.tzh::render_(file = 'zeroinfl')
 }
 \keyword{internal}

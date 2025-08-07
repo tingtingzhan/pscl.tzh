@@ -164,10 +164,10 @@ dataClasses.zeroinfl <- function(x) {
 #' @param x,xnm,... ..
 #' 
 #' @examples
-#' library(rmd.tzh); library(ecip) 
+#' library(ecip) 
 #' list(
 #'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
-#' ) |> render_(file = 'zeroinfl')
+#' ) |> rmd.tzh::render_(file = 'zeroinfl')
 #' @keywords internal
 #' @importFrom rmd.tzh md_
 #' @importFrom ecip md_multiple_
