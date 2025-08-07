@@ -9,15 +9,15 @@
 \alias{confint_.zeroinfl}
 \title{Additional S3 methods for \link[pscl]{zeroinfl}}
 \usage{
-coef_.zeroinfl(x)
+\method{coef_}{zeroinfl}(x)
 
-endpoint.zeroinfl(x)
+\method{endpoint}{zeroinfl}(x)
 
-desc_.zeroinfl(x)
+\method{desc_}{zeroinfl}(x)
 
-.pval.summary.zeroinfl(x)
+\method{.pval}{summary.zeroinfl}(x)
 
-confint_.zeroinfl(x, level = 0.95, ...)
+\method{confint_}{zeroinfl}(x, level = 0.95, ...)
 }
 \arguments{
 \item{x}{\link[pscl]{zeroinfl}}
@@ -29,3 +29,4 @@ confint_.zeroinfl(x, level = 0.95, ...)
 \description{
 Additional S3 methods for \link[pscl]{zeroinfl}
 }
+\keyword{internal}

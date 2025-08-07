@@ -5,14 +5,20 @@
 #' @param x \link[pscl]{zeroinfl}
 #' 
 #' @name S3_zeroinfl
+#' @keywords internal
+#' @importFrom ecip coef_
+#' @export coef_.zeroinfl
 #' @export
 coef_.zeroinfl <- function(x) x$coefficients # see ?pscl:::coef.zeroinfl
 
 #' @rdname S3_zeroinfl
 #' @importFrom stats family formula
+#' @importFrom ecip endpoint
+#' @export endpoint.zeroinfl
 #' @export
 endpoint.zeroinfl <- function(x) {
-  edp <- formula(x)[[2L]] # [tzh::endpoint.default]
+  #edp <- formula(x)[[2L]] # 
+  edp <- NextMethod(generic = 'endpoint') # [ecip::endpoint.default]
   return(list(
     count = paste(edp, '(Count Model)'), # |> as.expression(),
     zero = paste0('I(', edp, ' == 0)')# |> as.expression()
@@ -24,6 +30,8 @@ endpoint.zeroinfl <- function(x) {
 #' @importFrom methods new
 #' @importFrom utils bibentry
 #' @importClassesFrom rmd.tzh md_lines
+#' @importFrom ecip desc_
+#' @export desc_.zeroinfl
 #' @export
 desc_.zeroinfl <- function(x) {
   
@@ -50,6 +58,9 @@ desc_.zeroinfl <- function(x) {
 
 
 #' @rdname S3_zeroinfl
+#' @importFrom ecip .pval
+#' @method .pval summary.zeroinfl
+#' @export .pval.summary.zeroinfl
 #' @export
 .pval.summary.zeroinfl <- function(x) {
   # returned value from ?pscl:::summary.zeroinfl
@@ -107,6 +118,8 @@ family.zeroinfl <- function(object, ...) { # see ?pscl::zeroinfl
 #' @param level ..
 #' @param ... ..
 #' @importFrom stats confint.default
+#' @importFrom ecip confint_
+#' @export confint_.zeroinfl
 #' @export
 confint_.zeroinfl <- function(x, level = .95, ...) {
   nm <- x |> coef_.zeroinfl() |> names()
@@ -125,6 +138,46 @@ confint_.zeroinfl <- function(x, level = .95, ...) {
 #' @importFrom stats nobs
 #' @export
 nobs.zeroinfl <- function(object, ...) object[['n']]
+
+
+#' @title \link[ecip]{dataClasses} for \link[pscl]{zeroinfl} Object
+#' 
+#' @param x a \link[pscl]{zeroinfl} object
+#' 
+#' @note
+#' Function `pscl:::terms.zeroinfl()` return is not desired (not sure to which version tzh was commenting..).
+#' 
+#' @keywords internal
+#' @importFrom ecip dataClasses dataClasses.terms
+#' @export dataClasses.zeroinfl
+#' @export
+dataClasses.zeroinfl <- function(x) {
+  (x$terms$full) |> 
+    # do *not* overwrite ?pscl:::terms.zeroinfl; packageDate('pscl') # 2024-01-14
+    dataClasses.terms()
+}
+
+
+
+#' @title R Markdown Lines for \link[pscl]{zeroinfl} Object
+#' 
+#' @param x,xnm,... ..
+#' 
+#' @examples
+#' library(rmd.tzh); library(ecip) 
+#' list(
+#'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
+#' ) |> render_(file = 'zeroinfl')
+#' @keywords internal
+#' @importFrom rmd.tzh md_
+#' @importFrom ecip md_multiple_
+#' @export md_.zeroinfl
+#' @export
+md_.zeroinfl <- md_multiple_
+
+
+
+
 
 
 

@@ -14,5 +14,5 @@ RoxygenNote: 7.3.2
 Encoding: UTF-8
 License: GPL-2
 Depends: R (>= 4.5), pscl (== 1.5.9)
-Imports: methods, MASS (== 7.3.65), rmd.tzh
+Imports: methods, MASS (== 7.3.65), rmd.tzh, ecip
 
