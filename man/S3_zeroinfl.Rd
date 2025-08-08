@@ -29,4 +29,7 @@
 \description{
 Additional S3 methods for \link[pscl]{zeroinfl}
 }
+\details{
+Function \code{\link[=coef_.zeroinfl]{coef_.zeroinfl()}} avoids deployment to \code{S3} method \code{pscl:::coef.zeroinfl}.
+}
 \keyword{internal}

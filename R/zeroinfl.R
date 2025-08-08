@@ -4,12 +4,17 @@
 #' 
 #' @param x \link[pscl]{zeroinfl}
 #' 
+#' @details
+#' 
+#' Function [coef_.zeroinfl()] avoids deployment to `S3` method `pscl:::coef.zeroinfl`.
+#' 
+#' 
 #' @name S3_zeroinfl
 #' @keywords internal
 #' @importFrom ecip coef_
 #' @export coef_.zeroinfl
 #' @export
-coef_.zeroinfl <- function(x) x$coefficients # see ?pscl:::coef.zeroinfl
+coef_.zeroinfl <- function(x) x$coefficients
 
 #' @rdname S3_zeroinfl
 #' @importFrom stats family formula
@@ -164,16 +169,15 @@ dataClasses.zeroinfl <- function(x) {
 #' @param x,xnm,... ..
 #' 
 #' @examples
-#' library(ecip) 
-#' list(
+#' library(ecip); list(
 #'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
 #' ) |> rmd.tzh::render_(file = 'zeroinfl')
 #' @keywords internal
 #' @importFrom rmd.tzh md_
-#' @importFrom ecip md_multiple_
+#' @importFrom ecip md_ecips
 #' @export md_.zeroinfl
 #' @export
-md_.zeroinfl <- md_multiple_
+md_.zeroinfl <- md_ecips
 
 
 
