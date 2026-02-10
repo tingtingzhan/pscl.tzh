@@ -34,7 +34,7 @@ endpoint.zeroinfl <- function(x) {
 #' @rdname S3_zeroinfl
 #' @importFrom methods new
 #' @importFrom utils bibentry
-#' @importClassesFrom rmd.tzh md_lines
+#' @importClassesFrom fastmd md_lines
 #' @importFrom ecip desc_
 #' @export desc_.zeroinfl
 #' @export
@@ -171,9 +171,9 @@ dataClasses.zeroinfl <- function(x) {
 #' @examples
 #' library(ecip); list(
 #'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
-#' ) |> rmd.tzh::render_(file = 'zeroinfl')
+#' ) |> fastmd::render_(file = 'zeroinfl')
 #' @keywords internal
-#' @importFrom rmd.tzh md_
+#' @importFrom fastmd md_
 #' @importFrom ecip md_ecips
 #' @export md_.zeroinfl
 #' @export

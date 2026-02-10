@@ -10,9 +10,8 @@ Authors@R: c(person(given = 'Tingting', family = 'Zhan',
       '0000-0001-9971-4844')))
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Encoding: UTF-8
 License: GPL-2
 Depends: R (>= 4.5), pscl (== 1.5.9)
-Imports: methods, MASS (== 7.3.65), rmd.tzh, ecip
-
+Imports: methods, MASS (== 7.3.65), fastmd, ecip
