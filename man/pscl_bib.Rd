@@ -3,11 +3,14 @@
 \name{pscl_bib}
 \alias{pscl_bib}
 \alias{.lambert92}
-\title{bibs of pscl package}
+\title{bibs of \CRANpkg{pscl}}
 \usage{
-.lambert92()
+.lambert92(key = "Lambert92", ...)
+}
+\arguments{
+\item{key, ...}{\link[utils]{bibentry}}
 }
 \description{
-bibs of pscl package
+bibs of \CRANpkg{pscl}
 }
 \keyword{internal}

@@ -1,15 +1,17 @@
 
 
-#' @title bibs of pscl package
+#' @title bibs of \CRANpkg{pscl}
+#' 
+#' @param key,... \link[utils]{bibentry}
 #' 
 #' @keywords internal
-#' @importFrom utils bibentry
+#' @importFrom utils bibentry person
 #' @name pscl_bib
 #' @export
-.lambert92 <- \() {
+.lambert92 <- \(key = 'Lambert92', ...) {
   bibentry(
-    bibtype = 'Article', key = 'Lambert92',
-    author = 'Diane Lambert',
+    bibtype = 'article', key = key, ...,
+    author = person(given = 'Diane', family = 'Lambert'),
     journal = 'Technometrics',
     number = '1',
     pages = '1--14',
