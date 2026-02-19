@@ -15,6 +15,6 @@ R Markdown Lines for \link[pscl]{zeroinfl} Object
 \examples{
 library(ecip); list(
  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
-) |> fastmd::render2html(file = 'zeroinfl')
+) |> fastmd::render2html()
 }
 \keyword{internal}

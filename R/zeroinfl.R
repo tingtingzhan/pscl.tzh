@@ -160,7 +160,7 @@ dataClasses.zeroinfl <- function(x) {
 #' @examples
 #' library(ecip); list(
 #'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
-#' ) |> fastmd::render2html(file = 'zeroinfl')
+#' ) |> fastmd::render2html()
 #' @keywords internal
 #' @importFrom fastmd md_
 #' @importFrom ecip md_ecips
