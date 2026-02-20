@@ -158,9 +158,9 @@ dataClasses.zeroinfl <- function(x) {
 
 
 #' @importFrom fastmd md_
-#' @importFrom ecip md_ecips
+#' @importFrom ecip md_ecip
 #' @export
-md_.zeroinfl <- md_ecips
+md_.zeroinfl <- md_ecip
 
 
 
