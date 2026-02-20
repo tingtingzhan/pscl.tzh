@@ -8,6 +8,10 @@
 #' 
 #' Function [coef_.zeroinfl()] avoids deployment to `S3` method `pscl:::coef.zeroinfl`.
 #' 
+#' @examples
+#' library(ecip); list(
+#'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
+#' ) |> fastmd::render2html()
 #' 
 #' @name S3_zeroinfl
 #' @keywords internal
@@ -153,18 +157,8 @@ dataClasses.zeroinfl <- function(x) {
 
 
 
-#' @title R Markdown Lines for \link[pscl]{zeroinfl} Object
-#' 
-#' @param x,xnm,... ..
-#' 
-#' @examples
-#' library(ecip); list(
-#'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
-#' ) |> fastmd::render2html()
-#' @keywords internal
 #' @importFrom fastmd md_
 #' @importFrom ecip md_ecips
-#' @export md_.zeroinfl
 #' @export
 md_.zeroinfl <- md_ecips
 
