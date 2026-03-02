@@ -19,7 +19,7 @@ backward_maxp <- function(object, ...) UseMethod('backward_maxp')
 # simplify this function for ?backward_maxp.zeroinfl
 replace_row <- function(x, pattern, id = grep(pattern, x = rnm), value) {
   if (is.data.frame(x)) {
-    nr <- .row_names_info(x, type = 2L)
+    nr <- nrow(x)
     rnm <- row.names.data.frame(x)
   } else if (is.matrix(x)) {
     nr <- dim(x)[1L]

@@ -21,7 +21,6 @@
 coef_.zeroinfl <- function(x) x$coefficients
 
 #' @rdname S3_zeroinfl
-#' @importFrom stats family formula
 #' @importFrom ecip endpoint
 #' @export endpoint.zeroinfl
 #' @export
@@ -80,7 +79,6 @@ desc_.zeroinfl <- function(x) {
 
 # (necessary) clash ?MuMIn:::family.zeroinfl
 #' @importFrom MASS negative.binomial 
-#' @importFrom stats binomial poisson
 #' @export
 family.zeroinfl <- function(object, ...) { # see ?pscl::zeroinfl
   if (length(count_dist <- object$dist) != 1L) stop('will not happen')
@@ -115,7 +113,6 @@ family.zeroinfl <- function(object, ...) { # see ?pscl::zeroinfl
 #' @rdname S3_zeroinfl
 #' @param level ..
 #' @param ... ..
-#' @importFrom stats confint.default
 #' @importFrom ecip confint_
 #' @export confint_.zeroinfl
 #' @export
@@ -133,7 +130,6 @@ confint_.zeroinfl <- function(x, level = .95, ...) {
   return(ret)
 }
 
-#' @importFrom stats nobs
 #' @export
 nobs.zeroinfl <- function(object, ...) object[['n']]
 
