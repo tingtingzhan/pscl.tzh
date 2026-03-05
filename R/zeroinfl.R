@@ -1,28 +1,21 @@
 
 
-#' @title Additional S3 methods for \link[pscl]{zeroinfl}
-#' 
-#' @param x \link[pscl]{zeroinfl}
-#' 
-#' @details
-#' 
-#' Function [coef_.zeroinfl()] avoids deployment to `S3` method `pscl:::coef.zeroinfl`.
+#' @title \link[pscl]{zeroinfl} Objects
 #' 
 #' @examples
 #' library(ecip); list(
 #'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
 #' ) |> fastmd::render2html()
 #' 
-#' @name S3_zeroinfl
-#' @keywords internal
+#' @name zeroinfl
+NULL
+
+
 #' @importFrom ecip coef_
-#' @export coef_.zeroinfl
 #' @export
 coef_.zeroinfl <- function(x) x$coefficients
 
-#' @rdname S3_zeroinfl
 #' @importFrom ecip endpoint
-#' @export endpoint.zeroinfl
 #' @export
 endpoint.zeroinfl <- function(x) {
   #edp <- formula(x)[[2L]] # 
@@ -34,11 +27,8 @@ endpoint.zeroinfl <- function(x) {
 }
 
 
-#' @rdname S3_zeroinfl
-#' @importFrom methods new
 #' @importClassesFrom fastmd md_lines
 #' @importFrom ecip desc_
-#' @export desc_.zeroinfl
 #' @export
 desc_.zeroinfl <- function(x) {
   
@@ -54,10 +44,8 @@ desc_.zeroinfl <- function(x) {
 
 
 
-#' @rdname S3_zeroinfl
 #' @importFrom ecip .pval
 #' @method .pval summary.zeroinfl
-#' @export .pval.summary.zeroinfl
 #' @export
 .pval.summary.zeroinfl <- function(x) {
   # returned value from ?pscl:::summary.zeroinfl
@@ -110,11 +98,7 @@ family.zeroinfl <- function(object, ...) { # see ?pscl::zeroinfl
 
 
 
-#' @rdname S3_zeroinfl
-#' @param level ..
-#' @param ... ..
 #' @importFrom ecip confint_
-#' @export confint_.zeroinfl
 #' @export
 confint_.zeroinfl <- function(x, level = .95, ...) {
   nm <- x |> coef_.zeroinfl() |> names()
@@ -134,16 +118,8 @@ confint_.zeroinfl <- function(x, level = .95, ...) {
 nobs.zeroinfl <- function(object, ...) object[['n']]
 
 
-#' @title \link[ecip]{dataClasses} for \link[pscl]{zeroinfl} Object
-#' 
-#' @param x a \link[pscl]{zeroinfl} object
-#' 
-#' @note
-#' Function `pscl:::terms.zeroinfl()` return is not desired (not sure to which version tzh was commenting..).
-#' 
-#' @keywords internal
+# `pscl:::terms.zeroinfl()` return is not desired (not sure to which version tzh was commenting..).
 #' @importFrom ecip dataClasses dataClasses.terms
-#' @export dataClasses.zeroinfl
 #' @export
 dataClasses.zeroinfl <- function(x) {
   (x$terms$full) |> 
