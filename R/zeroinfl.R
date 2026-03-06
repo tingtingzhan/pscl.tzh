@@ -119,12 +119,12 @@ nobs.zeroinfl <- function(object, ...) object[['n']]
 
 
 # `pscl:::terms.zeroinfl()` return is not desired (not sure to which version tzh was commenting..).
-#' @importFrom ecip dataClasses dataClasses.terms
+#' @importFrom ecip dataClasses
 #' @export
 dataClasses.zeroinfl <- function(x) {
   (x$terms$full) |> 
     # do *not* overwrite ?pscl:::terms.zeroinfl; packageDate('pscl') # 2024-01-14
-    dataClasses.terms()
+    dataClasses() # ecip:::dataClasses.terms()
 }
 
 
