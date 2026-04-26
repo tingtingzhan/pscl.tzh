@@ -4,7 +4,8 @@
 #' 
 #' @examples
 #' library(ecip); list(
-#'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
+#'  '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists) |>
+#'   structure(fig.height = 7)
 #' ) |> fastmd::render2html()
 #' 
 #' @name zeroinfl
@@ -38,7 +39,7 @@ desc_.zeroinfl <- function(x) {
     negbin = 'negative binomial', 
     geometric = 'geometric'
   ), 'regression [@Lambert92]') |>
-    new(Class = 'md_lines', bibentry = .lambert92())
+    new(Class = 'md_lines', bibentry = .lambert92(), package = 'pscl')
   
 }
 
@@ -92,7 +93,7 @@ family.zeroinfl <- function(object, ...) { # see ?pscl::zeroinfl
 #  # `x$link` is link for zero-model only!!
 #  x |>
 #    family() |>
-#    vapply(FUN = getLink.default, FUN.VALUE = '')
+#    vapply(FUN = getLink, FUN.VALUE = '')
 #}
 
 

@@ -8,7 +8,8 @@
 }
 \examples{
 library(ecip); list(
- '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists)
+ '`zeroinfl`' = zeroinfl(art ~ . | 1, data = bioChemists) |>
+  structure(fig.height = 7)
 ) |> fastmd::render2html()
 
 }
